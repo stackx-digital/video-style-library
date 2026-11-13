@@ -225,6 +225,64 @@ textarea{width:100%;min-height:210px;background:#0e1117;color:var(--text);border
 .vo-l3 b{background:#111;color:#fff;padding:1cqh 2cqw;font-size:3cqw;letter-spacing:.1em}
 .vo-l3 span{background:var(--ac);color:#111;padding:1cqh 2.4cqw;font-size:3cqw;font-weight:700}
 @keyframes l3{0%,10%{transform:translateX(-100%)}22%,88%{transform:none}100%{transform:translateX(-100%)}}
+@property --ang{syntax:'<angle>';inherits:false;initial-value:0deg}
+.tstage{aspect-ratio:16/9;position:relative;overflow:hidden;background:#000;container-type:size;perspective:90cqw}
+.ta,.tb2{position:absolute;inset:0;display:grid;place-items:center;font:800 26cqw var(--display);color:rgba(255,255,255,.92);animation-duration:4s;animation-iteration-count:infinite;animation-timing-function:cubic-bezier(.65,0,.35,1)}
+.ta{background:linear-gradient(135deg,#ff6a3d,#ffb347)}
+.tb2{background:linear-gradient(135deg,#2f6bff,#6ee7ff)}
+.tstage::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0}
+.t-cut .tb2,.t-fadeblack .tb2,.t-fadewhite .tb2,.t-leak .tb2{animation-name:trcut}
+@keyframes trcut{0%,44%{opacity:0}45%,90%{opacity:1}90.1%,100%{opacity:0}}
+.t-dis .tb2{animation-name:trdis}
+@keyframes trdis{0%,35%{opacity:0}55%,90%{opacity:1}90.1%,100%{opacity:0}}
+.t-fadeblack::after,.t-fadewhite::after{animation:trdip 4s infinite}
+.t-fadeblack::after{background:#000}.t-fadewhite::after{background:#fff}
+@keyframes trdip{0%,30%{opacity:0}45%{opacity:1}60%,100%{opacity:0}}
+.t-slide .tb2,.t-push .tb2{animation-name:trsl}
+@keyframes trsl{0%,35%{transform:translateX(100%)}55%,90%{transform:none}90.1%,100%{transform:translateX(100%)}}
+.t-push .ta{animation-name:trpa}
+@keyframes trpa{0%,35%{transform:none}55%,90%{transform:translateX(-100%)}90.1%,100%{transform:none}}
+.t-whip .ta,.t-whip .tb2{animation-timing-function:cubic-bezier(.8,0,.2,1)}
+.t-whip .ta{animation-name:trwa}.t-whip .tb2{animation-name:trwb}
+@keyframes trwa{0%,35%{transform:none;filter:blur(0)}45%{filter:blur(1.8cqw)}55%,90%{transform:translateX(-100%);filter:blur(0)}90.1%,100%{transform:none;filter:blur(0)}}
+@keyframes trwb{0%,35%{transform:translateX(100%);filter:blur(0)}45%{filter:blur(1.8cqw)}55%,90%{transform:none;filter:blur(0)}90.1%,100%{transform:translateX(100%);filter:blur(0)}}
+.t-zoomin .ta{animation-name:tzia}.t-zoomin .tb2{animation-name:tzib}
+@keyframes tzia{0%,35%{transform:none;opacity:1}55%,90%{transform:scale(3);opacity:0}90.1%,100%{transform:none;opacity:1}}
+@keyframes tzib{0%,35%{transform:scale(.5);opacity:0}55%,90%{transform:none;opacity:1}90.1%,100%{transform:scale(.5);opacity:0}}
+.t-zoomout .ta{animation-name:tzoa}.t-zoomout .tb2{animation-name:tzob}
+@keyframes tzoa{0%,35%{transform:none;opacity:1}55%,90%{transform:scale(.4);opacity:0}90.1%,100%{transform:none;opacity:1}}
+@keyframes tzob{0%,35%{transform:scale(1.8);opacity:0}55%,90%{transform:none;opacity:1}90.1%,100%{transform:scale(1.8);opacity:0}}
+.t-spin .tb2{animation-name:trsp}
+@keyframes trsp{0%,35%{transform:rotate(-180deg) scale(0)}55%,90%{transform:none}90.1%,100%{transform:rotate(-180deg) scale(0)}}
+.t-flip .ta{animation-name:tfa}.t-flip .tb2{animation-name:tfb}
+@keyframes tfa{0%,35%{transform:rotateY(0)}45%,90%{transform:rotateY(90deg)}90.1%,100%{transform:rotateY(0)}}
+@keyframes tfb{0%,45%{transform:rotateY(-90deg)}55%,90%{transform:none}90.1%,100%{transform:rotateY(-90deg)}}
+.t-wipe .tb2{animation-name:twp}.t-diag .tb2{animation-name:tdg}.t-iris .tb2{animation-name:tir}.t-split .tb2{animation-name:tsp}.t-clock .tb2{animation-name:tck}
+@keyframes twp{0%,35%{clip-path:inset(0 100% 0 0)}55%,90%{clip-path:inset(0)}90.1%,100%{clip-path:inset(0 100% 0 0)}}
+@keyframes tdg{0%,35%{clip-path:polygon(0 0,0 0,0 0)}55%,90%{clip-path:polygon(0 0,200% 0,0 200%)}90.1%,100%{clip-path:polygon(0 0,0 0,0 0)}}
+@keyframes tir{0%,35%{clip-path:circle(0% at 50% 50%)}55%,90%{clip-path:circle(75% at 50% 50%)}90.1%,100%{clip-path:circle(0% at 50% 50%)}}
+@keyframes tsp{0%,35%{clip-path:inset(0 50% 0 50%)}55%,90%{clip-path:inset(0)}90.1%,100%{clip-path:inset(0 50% 0 50%)}}
+.t-clock .tb2{-webkit-mask:conic-gradient(#000 var(--ang),transparent 0);mask:conic-gradient(#000 var(--ang),transparent 0)}
+@keyframes tck{0%,35%{--ang:0deg}55%,90%{--ang:360deg}90.1%,100%{--ang:0deg}}
+.t-glitch .ta,.t-glitch .tb2{animation-timing-function:steps(1)}
+.t-glitch .ta{animation-name:tga}.t-glitch .tb2{animation-name:tgb}
+@keyframes tga{0%,35%{transform:none;filter:none}36%{transform:translateX(-3cqw);filter:hue-rotate(90deg)}38%{transform:translateX(4cqw) skewX(8deg)}40%{transform:translateX(-2cqw);filter:hue-rotate(200deg) saturate(2)}42%,100%{transform:none;filter:none}}
+@keyframes tgb{0%,41%{opacity:0}42%,47%{opacity:1;transform:translateX(3cqw);filter:hue-rotate(120deg)}48%,90%{opacity:1;transform:none;filter:none}90.1%,100%{opacity:0}}
+.t-blur .ta{animation-name:tba}.t-blur .tb2{animation-name:tbb}
+@keyframes tba{0%,35%{filter:blur(0);opacity:1}55%,90%{filter:blur(2.4cqw);opacity:0}90.1%,100%{filter:blur(0);opacity:1}}
+@keyframes tbb{0%,35%{filter:blur(2.4cqw);opacity:0}55%,90%{filter:none;opacity:1}90.1%,100%{filter:blur(2.4cqw);opacity:0}}
+.t-leak::after{background:radial-gradient(circle at 25% 40%,#fff6cc,#ff9a3c 45%,rgba(255,60,0,0) 70%);mix-blend-mode:screen;animation:tlk 4s infinite}
+@keyframes tlk{0%,30%{opacity:0;transform:scale(.6)}45%{opacity:1;transform:scale(1.4)}62%,100%{opacity:0;transform:scale(1.8)}}
+.t-smash .tb2{animation-name:tsm;animation-timing-function:linear}
+@keyframes tsm{0%,44%{opacity:0;transform:none}45%{opacity:1;transform:scale(1.12) translate(1cqw,-1cqw)}49%{transform:scale(1.06) translate(-1cqw,1cqw)}53%,90%{opacity:1;transform:none}90.1%,100%{opacity:0;transform:none}}
+.t-smash::after{background:#fff;animation:tfl 4s infinite}
+@keyframes tfl{0%,44%{opacity:0}45%{opacity:.9}53%,100%{opacity:0}}
+.tl{position:absolute;inset:0;background:#14171d;padding:16cqh 6cqw 6cqh;display:grid;gap:12cqh;align-content:center}
+.lane{position:relative;height:22cqh;background:#1d2129;border-radius:1cqw}
+.lane::before{content:attr(data-l);position:absolute;left:0;top:-5.5cqh;font-size:3cqw;color:#9aa3b2;letter-spacing:.12em}
+.lane i{position:absolute;top:0;bottom:0;display:grid;place-items:center;font:700 4.4cqw var(--display);font-style:normal;border-radius:1cqw;color:#fff}
+.tl .ph{position:absolute;top:6cqh;bottom:6cqh;width:.5cqw;background:#fff;left:6cqw;animation:phm 4s linear infinite}
+@keyframes phm{from{left:6cqw}to{left:94cqw}}
 .tabs{display:flex;gap:8px;margin:0 0 14px}
 .tab{background:transparent;border:0;border-bottom:2px solid transparent;color:var(--muted);font:700 17px var(--display);padding:6px 4px;margin-right:14px;cursor:pointer}
 .tab[aria-pressed="true"]{color:var(--text);border-color:var(--accent)}
@@ -263,10 +321,11 @@ textarea.sm{min-height:120px}
 <body>
 <div class="wrap">
   <h1>Pustaka Style Video</h1>
-  <p class="lead">42 style edit video. Setiap kad ada contoh gerakan yang berulang dan prompt yang boleh disalin terus ke Claude Code atau Codex bersama footage anda.</p>
+  <p class="lead">42 style edit video, ikon animasi dan 22 transisi. Setiap kad ada contoh gerakan yang berulang dan prompt atau kod yang boleh disalin terus ke Claude Code atau Codex bersama footage anda.</p>
   <div class="tabs" role="group" aria-label="Bahagian">
     <button class="tab" id="t-style" type="button" aria-pressed="true">Style video</button>
     <button class="tab" id="t-icon" type="button" aria-pressed="false">Ikon animasi</button>
+    <button class="tab" id="t-tr" type="button" aria-pressed="false">Transition</button>
   </div>
   <div id="sec-style">
   <div class="bar">
@@ -286,6 +345,15 @@ textarea.sm{min-height:120px}
     <div class="libinfo" id="libinfo"></div>
     <div class="count" id="icount"></div>
     <div class="igrid" id="igrid"></div>
+  </div>
+  <div id="sec-tr" hidden>
+    <div class="bar">
+      <input id="tq" type="search" placeholder="Cari transisi (cth. zoom, wipe, glitch)" aria-label="Cari transisi">
+      <div class="chips" id="tchips" role="group" aria-label="Kategori transisi"></div>
+    </div>
+    <div class="count" id="tcount"></div>
+    <div class="grid" id="tgrid"></div>
+    <div class="empty" id="tempty" hidden>Tiada transisi sepadan dengan carian itu.</div>
   </div>
 </div>
 <div class="ov" id="ov2" role="dialog" aria-modal="true" aria-labelledby="mt2">
@@ -526,14 +594,86 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape"&&ov2.classLi
 document.getElementById("csvg").onclick=function(e){var t=document.getElementById("isvg");t.select();copy(t.value,e.target,document.getElementById("nt2"))};
 document.getElementById("ccss").onclick=function(e){var t=document.getElementById("icss");t.select();copy(t.value,e.target,document.getElementById("nt2"))};
 iq.oninput=iRender;
+/* ===== Transition ===== */
+/* [nama,kategori,kelas,rupa,guna bila,tempoh,tip,xfade FFmpeg] */
+var TD=[
+["Hard Cut","Asas","cut","Satu babak terus bertukar kepada yang lain tanpa kesan.","Hampir semua keadaan. Pilihan lalai untuk video bercakap dan tempo laju.","0 saat","Potong pada tindakan atau perkataan, bukan pada jeda.",""],
+["Cross Dissolve","Asas","dis","Babak pertama pudar perlahan sambil babak kedua muncul.","Peralihan masa, lokasi atau mood yang lembut.","0.4-1 saat","Jangan guna pada setiap potongan, nanti nampak lapuk.","fade"],
+["Fade to Black","Asas","fadeblack","Babak menjadi hitam, kemudian babak baharu muncul daripada hitam.","Penutup bahagian, tamat video atau lompatan masa yang besar.","0.5-1 saat","Hitam sekejap memberi nafas sebelum bahagian seterusnya.","fadeblack"],
+["Dip to White","Asas","fadewhite","Skrin menjadi putih terang sebelum babak seterusnya muncul.","Kenangan, mimpi, atau reveal yang bersih dan terang.","0.4-0.8 saat","Padankan dengan grade cerah supaya tidak nampak kasar.","fadewhite"],
+["Slide","Gerakan","slide","Babak baharu meluncur masuk menutup babak lama.","Senarai, langkah demi langkah, atau skrin aplikasi.","0.3-0.5 saat","Arah luncuran sama dengan arah bacaan (kiri ke kanan).","coverleft"],
+["Push","Gerakan","push","Babak lama ditolak keluar oleh babak baharu.","Gambar bersebelahan, perbandingan, slaid.","0.3-0.5 saat","Guna easing ease-in-out supaya terasa seperti tolakan sebenar.","slideleft"],
+["Whip Pan","Gerakan","whip","Kamera seolah-olah dipusing laju dengan kabur gerakan di tengah.","Tukar lokasi dengan tenaga, vlog dan iklan laju.","0.2-0.4 saat","Tambah bunyi whoosh pada titik tengah.",""],
+["Zoom In","Gerakan","zoomin","Babak lama membesar sehingga hilang, babak baharu muncul dari kecil.","Masuk ke dalam detail, atau tekanan pada satu point.","0.3-0.6 saat","Sambungkan kepada sasaran zoom (mata, butang, objek).","zoomin"],
+["Zoom Out","Gerakan","zoomout","Babak lama mengecil, babak baharu mengecil masuk ke dalam frame.","Tunjuk gambaran besar selepas detail.","0.3-0.6 saat","Pasangan sesuai dengan Zoom In dalam satu video.",""],
+["Spin","Gerakan","spin","Babak baharu berputar masuk sambil membesar.","Kandungan santai, playful dan untuk kanak-kanak.","0.4-0.7 saat","Guna jarang, mudah nampak murahan.",""],
+["Flip 3D","Gerakan","flip","Babak berpusing pada paksi menegak seperti kad dibalik.","Sebelum dan selepas, soalan dan jawapan, dua sisi produk.","0.5-0.8 saat","Pastikan A dan B berkait supaya flip bermakna.",""],
+["Wipe","Bentuk","wipe","Babak baharu menyapu masuk dari satu tepi.","Tukar topik dalam penjelasan, gaya dokumentari.","0.4-0.8 saat","Selaraskan tepi sapuan dengan objek yang bergerak.","wipeleft"],
+["Diagonal Wipe","Bentuk","diag","Sapuan menyerong dari sudut ke sudut.","Gaya sukan atau berita dengan tenaga sederhana.","0.4-0.7 saat","Padankan arah sapuan dengan gerakan dalam babak.","diagtl"],
+["Iris","Bentuk","iris","Bulatan membuka dari tengah untuk reveal babak baharu.","Fokus pada subjek di tengah, gaya retro.","0.5-0.9 saat","Letak pusat iris pada subjek babak baharu.","circleopen"],
+["Split Open","Bentuk","split","Babak baharu terbuka dari tengah seperti pintu.","Reveal produk, pembukaan segmen.","0.5-0.8 saat","Letak tajuk di tengah semasa pintu terbuka.","vertopen"],
+["Clock Wipe","Bentuk","clock","Sapuan berputar seperti jarum jam.","Peredaran masa, kiraan detik, kandungan retro.","0.6-1 saat","Sesuai bila tema berkait dengan masa atau jadual.","radial"],
+["Glitch","Kreatif","glitch","Gangguan digital singkat dengan anjakan warna dan kedudukan.","Teknologi, gaming, kandungan bertenaga tinggi.","0.2-0.4 saat","Pendek sahaja. Glitch panjang memenatkan mata.",""],
+["Blur Dissolve","Kreatif","blur","Babak lama kabur dan pudar, babak baharu menjelma daripada kabur.","Peralihan sinematik yang lembut, mimpi.","0.5-1 saat","Padankan dengan perubahan fokus lensa.",""],
+["Light Leak","Kreatif","leak","Cahaya hangat meletup menutup skrin sebelum babak baharu.","Gaya filem, kenangan, perkahwinan dan travel.","0.5-0.9 saat","Guna overlay light leak dengan blend mode Screen.",""],
+["Smash Cut","Kreatif","smash","Potongan mengejut dengan hentakan dan flash.","Kejutan, humor, kontras kuat antara dua babak.","0 saat dengan hentakan","Tambah bunyi hentak tepat pada potongan.",""],
+["J-Cut","Teknik","jcut","Audio babak baharu bermula sebelum visualnya muncul.","Dialog, temu bual, dokumentari. Peralihan yang semula jadi.","audio mendahului 0.5-2 saat","Menarik penonton ke babak seterusnya sebelum mereka nampak.",""],
+["L-Cut","Teknik","lcut","Audio babak lama diteruskan selepas visual babak baharu muncul.","Reaksi, penerangan, b-roll di atas suara.","audio berterusan 0.5-2 saat","Bagus untuk tunjuk b-roll sementara suara masih bercakap.",""]
+];
+function trStage(t){
+  if(t[2]==="jcut"||t[2]==="lcut"){
+    var j=t[2]==="jcut",vA=j?60:50,aA=j?40:70;
+    function seg(l,w,c,x){return '<i style="left:'+l+'%;width:'+w+'%;background:'+c+'">'+x+'</i>'}
+    return '<div class="tstage"><div class="tl"><div class="lane" data-l="VIDEO">'+seg(0,vA,"#ff6a3d","A")+seg(vA,100-vA,"#2f6bff","B")+'</div><div class="lane" data-l="AUDIO">'+seg(0,aA,"#a8481f","A")+seg(aA,100-aA,"#1e45b8","B")+'</div><i class="ph"></i></div></div>';
+  }
+  return '<div class="tstage t-'+t[2]+'"><div class="ta">A</div><div class="tb2">B</div></div>';
+}
+function trPrompt(t){
+  return 'Letakkan transisi "'+t[0]+'" antara babak dalam video ini.\n\nRupa: '+t[3]+'\nTempoh: '+t[5]+'\nGuna bila: '+t[4]+'\nTip: '+t[6]+(t[7]?'\nFFmpeg: xfade transition='+t[7]:'')+'\n\nPeraturan: guna transisi ini hanya pada pertukaran babak yang sesuai, kekalkan satu rentak yang konsisten, dan jangan campur lebih daripada dua jenis transisi dalam satu video.';
+}
+var tcur="Semua",tq=document.getElementById("tq"),tg=document.getElementById("tgrid");
+var tcats=["Semua"].concat(TD.map(function(t){return t[1]}).filter(function(c,i,a){return a.indexOf(c)===i}));
+function tChips(){
+  var el=document.getElementById("tchips");el.innerHTML="";
+  tcats.forEach(function(c){var b=document.createElement("button");b.type="button";b.className="chip";b.textContent=c;b.setAttribute("aria-pressed",c===tcur);b.onclick=function(){tcur=c;tChips();tRender()};el.appendChild(b)});
+}
+function tRender(){
+  var term=tq.value.trim().toLowerCase();
+  var list=TD.filter(function(t){
+    if(tcur!=="Semua"&&t[1]!==tcur)return false;
+    return !term||(t[0]+" "+t[3]+" "+t[4]+" "+t[1]).toLowerCase().indexOf(term)>-1;
+  });
+  tg.innerHTML="";
+  list.forEach(function(t){
+    var a=document.createElement("article");a.className="card";a.tabIndex=0;
+    a.innerHTML=trStage(t)+'<div class="cbody"><span class="tag">'+t[1]+' &middot; '+t[5]+'</span><h3>'+t[0]+'</h3><p>'+t[3]+'</p><div class="row2"><button class="btn pri" type="button" data-a="copy">Salin prompt</button><button class="btn" type="button" data-a="open">Lihat resipi</button></div></div>';
+    a.onclick=function(e){var act=e.target.getAttribute&&e.target.getAttribute("data-a");if(act==="copy"){e.stopPropagation();copy(trPrompt(t),e.target)}else openTr(t)};
+    a.onkeydown=function(e){if(e.key==="Enter"&&e.target===a)openTr(t)};
+    tg.appendChild(a);
+  });
+  document.getElementById("tcount").textContent=list.length+" daripada "+TD.length+" transisi";
+  document.getElementById("tempty").hidden=list.length>0;
+}
+function openTr(t){
+  lastFocus=document.activeElement;
+  document.getElementById("mt").textContent=t[0];
+  document.getElementById("mstage").innerHTML=trStage(t);
+  document.getElementById("rec").innerHTML=[["Kategori",t[1]],["Rupa",t[3]],["Guna bila",t[4]],["Tempoh",t[5]],["Tip",t[6]]].concat(t[7]?[["FFmpeg","xfade transition="+t[7]]]:[]).map(function(r){return '<dt>'+r[0]+'</dt><dd>'+r[1]+'</dd>'}).join("");
+  document.getElementById("pr").value=trPrompt(t);
+  document.getElementById("nt").textContent="";
+  ov.classList.add("on");document.getElementById("x").focus();
+}
+tq.oninput=tRender;
 function tab(w){
-  var ic=w==="icon";
-  document.getElementById("sec-style").hidden=ic;document.getElementById("sec-icon").hidden=!ic;
-  document.getElementById("t-style").setAttribute("aria-pressed",!ic);document.getElementById("t-icon").setAttribute("aria-pressed",ic);
-  if(ic)iRender();
+  document.getElementById("sec-style").hidden=w!=="style";document.getElementById("sec-icon").hidden=w!=="icon";document.getElementById("sec-tr").hidden=w!=="tr";
+  ["style","icon","tr"].forEach(function(k){document.getElementById("t-"+k).setAttribute("aria-pressed",k===w)});
+  if(w==="icon")iRender();
+  if(w==="tr")tRender();
 }
 document.getElementById("t-style").onclick=function(){tab("style")};
 document.getElementById("t-icon").onclick=function(){tab("icon")};
+document.getElementById("t-tr").onclick=function(){tab("tr")};
+tChips();
 iChips();
 </script>
 </body>
