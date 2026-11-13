@@ -277,6 +277,43 @@ textarea{width:100%;min-height:210px;background:#0e1117;color:var(--text);border
 @keyframes tsm{0%,44%{opacity:0;transform:none}45%{opacity:1;transform:scale(1.12) translate(1cqw,-1cqw)}49%{transform:scale(1.06) translate(-1cqw,1cqw)}53%,90%{opacity:1;transform:none}90.1%,100%{opacity:0;transform:none}}
 .t-smash::after{background:#fff;animation:tfl 4s infinite}
 @keyframes tfl{0%,44%{opacity:0}45%{opacity:.9}53%,100%{opacity:0}}
+@property --w{syntax:'<percentage>';inherits:false;initial-value:0%}
+.t-brand .tb2,.t-strobe .tb2,.t-hide .tb2{animation-name:trcut}
+.t-brand::after{background:#7c5cff;animation:trdip 4s infinite}
+.t-strobe::after{background:#fff;animation:tst 4s steps(1) infinite}
+@keyframes tst{0%,38%{opacity:0}40%{opacity:1}42%{opacity:0}44%{opacity:1}46%{opacity:0}48%{opacity:1}50%,100%{opacity:0}}
+.t-bounce .tb2{animation-name:trsl;animation-timing-function:cubic-bezier(.34,1.56,.64,1)}
+.t-reveal .ta{z-index:2;animation-name:trpa}
+.t-squeeze .ta{animation-name:tsqa}.t-squeeze .tb2{animation-name:tsqb}
+@keyframes tsqa{0%,35%{transform:scaleX(1)}45%,90%{transform:scaleX(0)}90.1%,100%{transform:scaleX(1)}}
+@keyframes tsqb{0%,45%{transform:scaleX(0)}55%,90%{transform:scaleX(1)}90.1%,100%{transform:scaleX(0)}}
+.t-zoomblur .ta{animation-name:tzba}.t-zoomblur .tb2{animation-name:tzbb}
+@keyframes tzba{0%,35%{transform:none;filter:blur(0);opacity:1}50%{transform:scale(1.8);filter:blur(1.2cqw);opacity:1}55%,90%{transform:scale(2.4);filter:blur(2cqw);opacity:0}90.1%,100%{transform:none;filter:blur(0);opacity:1}}
+@keyframes tzbb{0%,40%{transform:scale(.6);filter:blur(2cqw);opacity:0}55%,90%{transform:none;filter:blur(0);opacity:1}90.1%,100%{transform:scale(.6);filter:blur(2cqw);opacity:0}}
+.t-cube{perspective:140cqw}
+.cube{position:absolute;inset:0;transform-style:preserve-3d;animation:tcb 4s cubic-bezier(.65,0,.35,1) infinite}
+.t-cube .ta{transform:translateZ(50cqw)}.t-cube .tb2{transform:rotateY(90deg) translateZ(50cqw)}
+@keyframes tcb{0%,35%{transform:translateZ(-50cqw) rotateY(0)}55%,90%{transform:translateZ(-50cqw) rotateY(-90deg)}90.1%,100%{transform:translateZ(-50cqw) rotateY(0)}}
+.t-hopen .tb2{animation-name:thop}
+@keyframes thop{0%,35%{clip-path:inset(50% 0 50% 0)}55%,90%{clip-path:inset(0)}90.1%,100%{clip-path:inset(50% 0 50% 0)}}
+.t-blinds .tb2{animation-name:tbl;-webkit-mask:linear-gradient(90deg,#000 var(--w),transparent 0) 0 0/12.5% 100%;mask:linear-gradient(90deg,#000 var(--w),transparent 0) 0 0/12.5% 100%}
+@keyframes tbl{0%,35%{--w:0%}55%,90%{--w:100%}90.1%,100%{--w:0%}}
+.t-star .tb2{animation-name:tst2}
+@keyframes tst2{0%,35%{clip-path:polygon(50cqw 50cqh,50cqw 50cqh,50cqw 50cqh,50cqw 50cqh,50cqw 50cqh,50cqw 50cqh,50cqw 50cqh,50cqw 50cqh,50cqw 50cqh,50cqw 50cqh)}60%,90%{clip-path:polygon(calc(50cqw + 0.0cqw) calc(50cqh + -130.0cqw),calc(50cqw + 44.7cqw) calc(50cqh + -61.5cqw),calc(50cqw + 123.6cqw) calc(50cqh + -40.2cqw),calc(50cqw + 72.3cqw) calc(50cqh + 23.5cqw),calc(50cqw + 76.4cqw) calc(50cqh + 105.2cqw),calc(50cqw + 0.0cqw) calc(50cqh + 76.0cqw),calc(50cqw + -76.4cqw) calc(50cqh + 105.2cqw),calc(50cqw + -72.3cqw) calc(50cqh + 23.5cqw),calc(50cqw + -123.6cqw) calc(50cqh + -40.2cqw),calc(50cqw + -44.7cqw) calc(50cqh + -61.5cqw))}90.1%,100%{clip-path:polygon(50cqw 50cqh,50cqw 50cqh,50cqw 50cqh,50cqw 50cqh,50cqw 50cqh,50cqw 50cqh,50cqw 50cqh,50cqw 50cqh,50cqw 50cqh,50cqw 50cqh)}}
+.t-diamond .tb2{animation-name:tdm}
+@keyframes tdm{0%,35%{clip-path:polygon(50% 50%,50% 50%,50% 50%,50% 50%)}55%,90%{clip-path:polygon(50% -110%,210% 50%,50% 210%,-110% 50%)}90.1%,100%{clip-path:polygon(50% 50%,50% 50%,50% 50%,50% 50%)}}
+.t-mosaic .tb2{animation-name:tmb;animation-timing-function:steps(1)}
+@keyframes tmb{0%,46%{opacity:0}47%,80%{opacity:1}81%,100%{opacity:0}}
+.mo{position:absolute;inset:0;display:grid;grid-template:repeat(4,1fr)/repeat(8,1fr);z-index:1}
+.mo i{background:linear-gradient(135deg,#2f6bff,#6ee7ff);background-size:800% 400%;background-position:var(--bx) var(--by);opacity:0;animation:tmo 4s steps(1) infinite;animation-delay:var(--r)}
+.t-mosaic .tb2{z-index:2}
+@keyframes tmo{0%,30%{opacity:0}31%,80%{opacity:1}81%,100%{opacity:0}}
+.t-hide::after{opacity:1;background:linear-gradient(90deg,transparent,#0a0a0a 18%,#0a0a0a 82%,transparent);transform:translateX(-100%);animation:thd 4s linear infinite}
+@keyframes thd{0%,30%{transform:translateX(-100%)}45%{transform:none}60%,100%{transform:translateX(100%)}}
+.t-slideup .tb2,.t-scrollup .tb2{animation-name:trsu}
+.t-scrollup .ta{animation-name:tsa}
+@keyframes trsu{0%,35%{transform:translateY(100%)}55%,90%{transform:none}90.1%,100%{transform:translateY(100%)}}
+@keyframes tsa{0%,35%{transform:none}55%,90%{transform:translateY(-100%)}90.1%,100%{transform:none}}
 .tl{position:absolute;inset:0;background:#14171d;padding:16cqh 6cqw 6cqh;display:grid;gap:12cqh;align-content:center}
 .lane{position:relative;height:22cqh;background:#1d2129;border-radius:1cqw}
 .lane::before{content:attr(data-l);position:absolute;left:0;top:-5.5cqh;font-size:3cqw;color:#9aa3b2;letter-spacing:.12em}
@@ -321,7 +358,7 @@ textarea.sm{min-height:120px}
 <body>
 <div class="wrap">
   <h1>Pustaka Style Video</h1>
-  <p class="lead">42 style edit video, ikon animasi dan 22 transisi. Setiap kad ada contoh gerakan yang berulang dan prompt atau kod yang boleh disalin terus ke Claude Code atau Codex bersama footage anda.</p>
+  <p class="lead">42 style edit video, ikon animasi dan 37 transisi. Setiap kad ada contoh gerakan yang berulang dan prompt atau kod yang boleh disalin terus ke Claude Code atau Codex bersama footage anda.</p>
   <div class="tabs" role="group" aria-label="Bahagian">
     <button class="tab" id="t-style" type="button" aria-pressed="true">Style video</button>
     <button class="tab" id="t-icon" type="button" aria-pressed="false">Ikon animasi</button>
@@ -618,7 +655,22 @@ var TD=[
 ["Light Leak","Kreatif","leak","Cahaya hangat meletup menutup skrin sebelum babak baharu.","Gaya filem, kenangan, perkahwinan dan travel.","0.5-0.9 saat","Guna overlay light leak dengan blend mode Screen.",""],
 ["Smash Cut","Kreatif","smash","Potongan mengejut dengan hentakan dan flash.","Kejutan, humor, kontras kuat antara dua babak.","0 saat dengan hentakan","Tambah bunyi hentak tepat pada potongan.",""],
 ["J-Cut","Teknik","jcut","Audio babak baharu bermula sebelum visualnya muncul.","Dialog, temu bual, dokumentari. Peralihan yang semula jadi.","audio mendahului 0.5-2 saat","Menarik penonton ke babak seterusnya sebelum mereka nampak.",""],
-["L-Cut","Teknik","lcut","Audio babak lama diteruskan selepas visual babak baharu muncul.","Reaksi, penerangan, b-roll di atas suara.","audio berterusan 0.5-2 saat","Bagus untuk tunjuk b-roll sementara suara masih bercakap.",""]
+["L-Cut","Teknik","lcut","Audio babak lama diteruskan selepas visual babak baharu muncul.","Reaksi, penerangan, b-roll di atas suara.","audio berterusan 0.5-2 saat","Bagus untuk tunjuk b-roll sementara suara masih bercakap.",""],
+["Dip to Colour","Asas","brand","Skrin berubah kepada warna jenama sebelum babak baharu muncul.","Video korporat dan jenama. Sambung segmen dengan identiti visual.","0.4-0.8 saat","Guna warna utama jenama, bukan warna rawak.",""],
+["Strobe Flash","Kreatif","strobe","Kilat putih berkelip pantas beberapa kali pada titik potong.","Beat muzik, konsert, kandungan EDM atau kejutan.","0.2-0.4 saat","Elak kelipan lebih daripada 3 kali sesaat kerana boleh mengganggu penonton sensitif cahaya.",""],
+["Bounce Slide","Gerakan","bounce","Babak baharu meluncur masuk dan melantun sedikit melepasi kedudukan akhir.","Gaya playful, kandungan sosial media dan kanak-kanak.","0.4-0.6 saat","Guna easing overshoot ringan, jangan dilebihkan.",""],
+["Reveal","Gerakan","reveal","Babak lama meluncur keluar menyingkap babak baharu di bawahnya.","Reveal produk atau jawapan selepas soalan.","0.4-0.7 saat","Babak di bawah mesti sudah sedia supaya reveal nampak kemas.","revealleft"],
+["Squeeze","Gerakan","squeeze","Babak lama dipipihkan secara mendatar, babak baharu mengembang keluar.","Gaya kartun, humor dan kandungan ringan.","0.3-0.5 saat","Padankan dengan bunyi squish atau pop.","squeezeh"],
+["Zoom Blur","Gerakan","zoomblur","Zoom laju dengan kabur sebelum babak baharu menjelma.","Tenaga tinggi, sukan, trailer dan hentakan beat.","0.3-0.5 saat","Selaraskan puncak zoom dengan beat atau bunyi impak.",""],
+["Cube Rotate","Gerakan","cube","Dua babak berputar sebagai muka kubus 3D.","Tukar topik dalam persembahan atau kandungan teknologi.","0.6-1 saat","Guna sekali dua sahaja, kesan 3D cepat menjemukan.",""],
+["Horizontal Open","Bentuk","hopen","Babak baharu terbuka dari garis tengah mendatar ke atas dan bawah.","Pembukaan wayang lebar, reveal sinematik.","0.5-0.8 saat","Padankan garis tengah dengan horizon dalam babak.","horzopen"],
+["Venetian Blinds","Bentuk","blinds","Babak baharu muncul melalui jalur menegak seperti bidai.","Gaya retro, sebelum dan selepas.","0.5-0.9 saat","Jalur kecil nampak halus, jalur besar nampak berani.","hlslice"],
+["Star Wipe","Bentuk","star","Bintang membesar dari tengah untuk membuka babak baharu.","Kandungan ceria, kanak-kanak dan retro.","0.5-0.9 saat","Sesuai untuk hiburan, elak untuk video korporat serius.",""],
+["Diamond Iris","Bentuk","diamond","Berlian membesar dari tengah menyingkap babak baharu.","Gaya klasik, reveal subjek di tengah.","0.5-0.8 saat","Letak subjek di tengah supaya berlian membingkainya.",""],
+["Mosaic","Bentuk","mosaic","Babak baharu muncul kotak demi kotak merentas skrin.","Gaya digital, permainan, tema teknologi.","0.5-0.9 saat","Kotak lebih kecil memberi kesan lebih halus.","pixelize"],
+["Hide Cut","Teknik","hide","Potongan disembunyikan di sebalik objek yang melintasi frame.","Sambung dua shot tanpa potongan ketara, atau sembunyikan jump cut.","0.3-0.6 saat","Rakam atau cari objek yang menutup seluruh frame pada titik potong.",""],
+["Slide Up","Menegak","slideup","Babak baharu meluncur naik dari bawah menutup babak lama.","Video menegak 9:16 untuk Reels, TikTok dan Shorts.","0.3-0.5 saat","Arah ke atas selari dengan gerakan skrol penonton.","coverup"],
+["Scroll Up","Menegak","scrollup","Babak lama ditolak ke atas oleh babak baharu seperti skrol.","Senarai tip atau swipe antara klip menegak.","0.3-0.5 saat","Guna easing ease-out supaya terasa seperti skrol jari.","slideup"]
 ];
 function trStage(t){
   if(t[2]==="jcut"||t[2]==="lcut"){
@@ -626,6 +678,8 @@ function trStage(t){
     function seg(l,w,c,x){return '<i style="left:'+l+'%;width:'+w+'%;background:'+c+'">'+x+'</i>'}
     return '<div class="tstage"><div class="tl"><div class="lane" data-l="VIDEO">'+seg(0,vA,"#ff6a3d","A")+seg(vA,100-vA,"#2f6bff","B")+'</div><div class="lane" data-l="AUDIO">'+seg(0,aA,"#a8481f","A")+seg(aA,100-aA,"#1e45b8","B")+'</div><i class="ph"></i></div></div>';
   }
+  if(t[2]==="cube")return '<div class="tstage t-cube"><div class="cube"><div class="ta">A</div><div class="tb2">B</div></div></div>';
+  if(t[2]==="mosaic"){var m="";for(var r=0;r<4;r++)for(var c=0;c<8;c++)m+='<i style="--bx:'+(c/7*100)+'%;--by:'+(r/3*100)+'%;--r:'+(((c*7+r*13)%10)*0.05)+'s"></i>';return '<div class="tstage t-mosaic"><div class="ta">A</div><div class="mo">'+m+'</div><div class="tb2">B</div></div>'}
   return '<div class="tstage t-'+t[2]+'"><div class="ta">A</div><div class="tb2">B</div></div>';
 }
 function trPrompt(t){
