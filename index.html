@@ -314,6 +314,31 @@ textarea{width:100%;min-height:210px;background:#0e1117;color:var(--text);border
 .t-scrollup .ta{animation-name:tsa}
 @keyframes trsu{0%,35%{transform:translateY(100%)}55%,90%{transform:none}90.1%,100%{transform:translateY(100%)}}
 @keyframes tsa{0%,35%{transform:none}55%,90%{transform:translateY(-100%)}90.1%,100%{transform:none}}
+@property --tx{syntax:'<percentage>';inherits:false;initial-value:0%}
+.t-pturn .ta{z-index:2;transform-style:preserve-3d;backface-visibility:hidden;transform-origin:0 50%;animation-name:tpt;box-shadow:0 0 3cqw rgba(0,0,0,.35)}
+.t-pturn .ta::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#d9cfb4,#f1e9d2);transform:rotateY(180deg);backface-visibility:hidden}
+@keyframes tpt{0%,35%{transform:rotateY(0)}60%,90%{transform:rotateY(-180deg)}90.1%,100%{transform:rotateY(0)}}
+.t-tear .tl1{clip-path:polygon(0 0,50% 0%,53% 10%,47% 20%,52% 30%,48% 40%,53% 50%,47% 60%,52% 70%,48% 80%,53% 90%,50% 100%,0 100%);animation-name:ttl}
+.t-tear .tr1{clip-path:polygon(50% 0%,53% 10%,47% 20%,52% 30%,48% 40%,53% 50%,47% 60%,52% 70%,48% 80%,53% 90%,50% 100%,100% 100%,100% 0);animation-name:ttr}
+@keyframes ttl{0%,35%{transform:none}58%,90%{transform:translateX(-72%) rotate(-9deg)}90.1%,100%{transform:none}}
+@keyframes ttr{0%,35%{transform:none}58%,90%{transform:translateX(72%) rotate(9deg)}90.1%,100%{transform:none}}
+.t-flap .ta{z-index:2;transform-origin:50% 0;backface-visibility:hidden;animation-name:tfp;box-shadow:0 2cqh 3cqh rgba(0,0,0,.3)}
+@keyframes tfp{0%,35%{transform:rotateX(0)}60%,90%{transform:rotateX(-110deg)}90.1%,100%{transform:rotateX(0)}}
+.t-strips .tb2{animation-name:tstb}
+@keyframes tstb{0%,49%{opacity:0}50%,90%{opacity:1}90.1%,100%{opacity:0}}
+.sp{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;pointer-events:none}
+.sp i{flex:1;transform:translateX(-101%);animation:4s cubic-bezier(.65,0,.35,1) infinite;box-shadow:0 0 2cqw rgba(0,0,0,.3)}
+.sp i:nth-child(1){background:#ffd23f;animation-name:tps1}.sp i:nth-child(2){background:#ff4d8d;animation-name:tps2}.sp i:nth-child(3){background:#1b1f2a;animation-name:tps3}
+@keyframes tps1{0%,30%{transform:translateX(-101%)}42%,58%{transform:none}70%,100%{transform:translateX(101%)}}
+@keyframes tps2{0%,33%{transform:translateX(-101%)}45%,61%{transform:none}73%,100%{transform:translateX(101%)}}
+@keyframes tps3{0%,36%{transform:translateX(-101%)}48%,64%{transform:none}76%,100%{transform:translateX(101%)}}
+.t-crumple .ta{z-index:2;animation-name:tcr;box-shadow:0 1cqh 3cqh rgba(0,0,0,.35)}
+@keyframes tcr{0%,35%{transform:none;border-radius:0;opacity:1}55%{transform:scale(.18) rotate(540deg);border-radius:50%;opacity:1}65%,90%{transform:translate(120%,-80%) scale(.1) rotate(720deg);border-radius:50%;opacity:0}90.1%,100%{transform:none;border-radius:0;opacity:1}}
+.t-torn .tb2{animation-name:ttw;clip-path:polygon(0 0,var(--tx) 0,calc(var(--tx) + 5%) 10%,var(--tx) 20%,calc(var(--tx) + 4%) 30%,calc(var(--tx) - 1%) 40%,calc(var(--tx) + 5%) 50%,var(--tx) 60%,calc(var(--tx) + 4%) 70%,calc(var(--tx) - 1%) 80%,calc(var(--tx) + 5%) 90%,var(--tx) 100%,0 100%)}
+@keyframes ttw{0%,35%{--tx:-6%}58%,90%{--tx:106%}90.1%,100%{--tx:-6%}}
+.t-shuffle .ta{animation-name:tsha;box-shadow:0 1cqh 3cqh rgba(0,0,0,.35)}.t-shuffle .tb2{animation-name:tshb}
+@keyframes tsha{0%,30%{transform:none;z-index:2}42%{transform:translateX(62%) rotate(7deg);z-index:2}50%{transform:translateX(62%) rotate(7deg);z-index:0}62%,90%{transform:scale(.9);z-index:0}90.1%,100%{transform:none;z-index:2}}
+@keyframes tshb{0%,40%{transform:scale(.9);z-index:1}62%,90%{transform:none;z-index:1}90.1%,100%{transform:scale(.9);z-index:1}}
 .tl{position:absolute;inset:0;background:#14171d;padding:16cqh 6cqw 6cqh;display:grid;gap:12cqh;align-content:center}
 .lane{position:relative;height:22cqh;background:#1d2129;border-radius:1cqw}
 .lane::before{content:attr(data-l);position:absolute;left:0;top:-5.5cqh;font-size:3cqw;color:#9aa3b2;letter-spacing:.12em}
@@ -358,7 +383,7 @@ textarea.sm{min-height:120px}
 <body>
 <div class="wrap">
   <h1>Pustaka Style Video</h1>
-  <p class="lead">42 style edit video, ikon animasi dan 37 transisi. Setiap kad ada contoh gerakan yang berulang dan prompt atau kod yang boleh disalin terus ke Claude Code atau Codex bersama footage anda.</p>
+  <p class="lead">42 style edit video, ikon animasi dan 44 transisi. Setiap kad ada contoh gerakan yang berulang dan prompt atau kod yang boleh disalin terus ke Claude Code atau Codex bersama footage anda.</p>
   <div class="tabs" role="group" aria-label="Bahagian">
     <button class="tab" id="t-style" type="button" aria-pressed="true">Style video</button>
     <button class="tab" id="t-icon" type="button" aria-pressed="false">Ikon animasi</button>
@@ -670,7 +695,14 @@ var TD=[
 ["Mosaic","Bentuk","mosaic","Babak baharu muncul kotak demi kotak merentas skrin.","Gaya digital, permainan, tema teknologi.","0.5-0.9 saat","Kotak lebih kecil memberi kesan lebih halus.","pixelize"],
 ["Hide Cut","Teknik","hide","Potongan disembunyikan di sebalik objek yang melintasi frame.","Sambung dua shot tanpa potongan ketara, atau sembunyikan jump cut.","0.3-0.6 saat","Rakam atau cari objek yang menutup seluruh frame pada titik potong.",""],
 ["Slide Up","Menegak","slideup","Babak baharu meluncur naik dari bawah menutup babak lama.","Video menegak 9:16 untuk Reels, TikTok dan Shorts.","0.3-0.5 saat","Arah ke atas selari dengan gerakan skrol penonton.","coverup"],
-["Scroll Up","Menegak","scrollup","Babak lama ditolak ke atas oleh babak baharu seperti skrol.","Senarai tip atau swipe antara klip menegak.","0.3-0.5 saat","Guna easing ease-out supaya terasa seperti skrol jari.","slideup"]
+["Scroll Up","Menegak","scrollup","Babak lama ditolak ke atas oleh babak baharu seperti skrol.","Senarai tip atau swipe antara klip menegak.","0.3-0.5 saat","Guna easing ease-out supaya terasa seperti skrol jari.","slideup"],
+["Page Turn","Kertas","pturn","Halaman dibalik dari tepi kiri seperti buku, menyingkap halaman seterusnya.","Cerita berbab, buku, jurnal dan kandungan nostalgik.","0.6-1 saat","Tambah bunyi kertas dibalik dan bayang lembut pada lipatan.",""],
+["Paper Tear","Kertas","tear","Babak dikoyak di tengah, dua kepingan terpisah menyingkap babak baharu.","Kejutan, ketegangan, pecahkan mitos atau tamatkan segmen.","0.4-0.7 saat","Letak bunyi koyak tepat pada permulaan gerakan.",""],
+["Paper Flap","Kertas","flap","Babak terlipat ke atas dari tepi atas menyingkap babak di bawahnya.","Reveal jawapan, buka surat atau kad.","0.4-0.7 saat","Tambah bayang di bawah lipatan supaya nampak berlapis.",""],
+["Paper Strips","Kertas","strips","Jalur kertas berwarna meluncur menutup skrin, kemudian keluar menyingkap babak baharu.","Tajuk segmen, intro, kandungan berwarna dan bertenaga.","0.6-1 saat","Guna warna jenama untuk jalur supaya sekali gus menjadi branding.",""],
+["Crumple","Kertas","crumple","Babak digumpal menjadi bebola kertas dan dibuang keluar frame.","Membuang idea lama, humor, atau pembetulan.","0.5-0.8 saat","Bunyi kertas renyuk dan bunyi baling menguatkan kesan.",""],
+["Torn Edge Wipe","Kertas","torn","Babak baharu menyapu masuk dengan tepi koyak yang tidak sekata.","Gaya scrapbook, dokumentari dan kandungan buatan tangan.","0.5-0.9 saat","Padankan dengan style Scrapbook Documentary.","wipeleft"],
+["Card Shuffle","Kertas","shuffle","Kad paling atas ditolak keluar lalu diselit ke bawah, kad seterusnya naik ke atas.","Senarai, perbandingan, tip bernombor atau gambar.","0.5-0.8 saat","Beri sedikit putaran supaya terasa seperti kad sebenar.",""]
 ];
 function trStage(t){
   if(t[2]==="jcut"||t[2]==="lcut"){
@@ -678,6 +710,8 @@ function trStage(t){
     function seg(l,w,c,x){return '<i style="left:'+l+'%;width:'+w+'%;background:'+c+'">'+x+'</i>'}
     return '<div class="tstage"><div class="tl"><div class="lane" data-l="VIDEO">'+seg(0,vA,"#ff6a3d","A")+seg(vA,100-vA,"#2f6bff","B")+'</div><div class="lane" data-l="AUDIO">'+seg(0,aA,"#a8481f","A")+seg(aA,100-aA,"#1e45b8","B")+'</div><i class="ph"></i></div></div>';
   }
+  if(t[2]==="tear")return '<div class="tstage t-tear"><div class="tb2">B</div><div class="ta tl1">A</div><div class="ta tr1">A</div></div>';
+  if(t[2]==="strips")return '<div class="tstage t-strips"><div class="ta">A</div><div class="tb2">B</div><div class="sp"><i></i><i></i><i></i></div></div>';
   if(t[2]==="cube")return '<div class="tstage t-cube"><div class="cube"><div class="ta">A</div><div class="tb2">B</div></div></div>';
   if(t[2]==="mosaic"){var m="";for(var r=0;r<4;r++)for(var c=0;c<8;c++)m+='<i style="--bx:'+(c/7*100)+'%;--by:'+(r/3*100)+'%;--r:'+(((c*7+r*13)%10)*0.05)+'s"></i>';return '<div class="tstage t-mosaic"><div class="ta">A</div><div class="mo">'+m+'</div><div class="tb2">B</div></div>'}
   return '<div class="tstage t-'+t[2]+'"><div class="ta">A</div><div class="tb2">B</div></div>';
